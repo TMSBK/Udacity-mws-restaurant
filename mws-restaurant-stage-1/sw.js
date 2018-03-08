@@ -1,5 +1,7 @@
 var staticCacheName = 'restaurant-reviews-v1';
 
+//Caching main content while installing Service Worker
+
 self.addEventListener('install', function(event) {
     event.waitUntil (
         caches.open(staticCacheName).then(function(cache) {
@@ -13,6 +15,8 @@ self.addEventListener('install', function(event) {
         })
     );
 });
+
+// Deletes old Cache on an update
 
 self.addEventListener('activate', function(event) {
     event.waitUntil(
@@ -28,6 +32,8 @@ self.addEventListener('activate', function(event) {
         })
     );
 });
+
+//Downloads content from Cache, if it's reachable
 
 self.addEventListener('fetch', function(event) {
     event.respondWith(

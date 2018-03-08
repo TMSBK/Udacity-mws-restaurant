@@ -1,3 +1,5 @@
+//Registering Service Worker
+
 if (!navigator.serviceWorker) {
     console.log('This browser doesn\'t support Service Worker!');
 } else {
@@ -5,5 +7,5 @@ if (!navigator.serviceWorker) {
         console.log('Registration worked!')
     }).catch(function() {
         console.log('Registration failed!')
-    });
-};
+    })
+}
