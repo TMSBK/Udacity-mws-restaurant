@@ -51,9 +51,13 @@ fetchRestaurantFromURL = (callback) => {
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
+  name.setAttribute("tabindex",0);
+  name.classList.add("focus");
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
+  address.setAttribute("tabindex",0);
+  address.classList.add("focus");
   address.setAttribute("aria-label","address of the restaurant " + restaurant.address)
 
   const image = document.getElementById('restaurant-img');
@@ -80,15 +84,22 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   hours.setAttribute("aria-label","opening hours of the restaurant");
+  hours.setAttribute("tabindex",0);
+  hours.classList.add("focus");
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
     const day = document.createElement('td');
     day.innerHTML = key;
+    day.setAttribute("tabindex",0);
+    day.setAttribute("aria-label", `The opening hours in ${key}`);
+    day.classList.add("focus");
     row.appendChild(day);
 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
+    time.setAttribute("tabindex",0);
+    time.classList.add("focus");
     row.appendChild(time);
 
     hours.appendChild(row);
@@ -102,6 +113,8 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
+  title.setAttribute("tabindex",0);
+  title.classList.add("focus");
   container.appendChild(title);
 
   if (!reviews) {
@@ -125,21 +138,30 @@ createReviewHTML = (review) => {
   const name = document.createElement('p');
   name.innerHTML = review.name;
   name.setAttribute("class", "name" );
+  li.setAttribute("tabindex",0);
+  li.classList.add("focus");
+  li.setAttribute("aria-label", `Review from ${review.name}`);
   li.appendChild(name);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
   date.setAttribute("class", "date" );
+  date.setAttribute("tabindex",0);
+  date.classList.add("focus");
   li.appendChild(date);
 
   const rating = document.createElement('p');
   rating.innerHTML = `Rating: ${review.rating}`;
   rating.setAttribute("class", "rating" );
+  rating.setAttribute("tabindex",0);
+  rating.classList.add("focus");
   li.appendChild(rating);
 
   const comments = document.createElement('p');
   comments.innerHTML = review.comments;
   comments.setAttribute("class", "comments" );
+  comments.setAttribute("tabindex",0);
+  comments.classList.add("focus");
   li.appendChild(comments);
 
   return li;
