@@ -147,7 +147,7 @@ createReviewHTML = (review) => {
   date.innerHTML = review.date;
   date.setAttribute("class", "date" );
   date.setAttribute("tabindex",0);
-  date.classList.add("focus");
+  date.classList.add("focus_white");
   li.appendChild(date);
 
   const rating = document.createElement('p');
