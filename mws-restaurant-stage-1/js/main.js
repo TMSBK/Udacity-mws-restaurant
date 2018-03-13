@@ -72,7 +72,8 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 /**
  * Initialize Google map, called from HTML.
  */
-window.initMap = () => {
+
+window.initMap = () => { 
   let loc = {
     lat: 40.722216,
     lng: -73.987501
@@ -145,7 +146,7 @@ createRestaurantHTML = (restaurant) => {
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.srcset = `/minimizedImages/${restaurant.photo_small_1x} 1x,
                   /minimizedImages/${restaurant.photo_2x} 2x`;
-  image.alt = `a picture from the restaurant ${restaurant.name}`;
+  image.alt = `${restaurant.name}`;
   li.append(image);
 
   const name = document.createElement('h3');

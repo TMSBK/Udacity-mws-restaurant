@@ -56,11 +56,11 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
   address.classList.add("focus");
-  address.setAttribute("aria-label","address of the restaurant " + restaurant.address)
+  address.setAttribute("aria-label","address of the restaurant " + restaurant.address);
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.setAttribute("alt", "a picture from the restaurant " + restaurant.name)
+  image.className = 'restaurant-img';
+  image.alt = `${restaurant.name}`;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.srcset = `/minimizedImages/${restaurant.photo_large_1x} 1x,
                   /minimizedImages/${restaurant.photo_2x} 2x`;

@@ -23,7 +23,8 @@ a {
 	color: orange;
 	text-decoration: none;
 }
-a:hover, a:focus {
+a:hover, 
+a:focus {
 	color: #3397db;
 	text-decoration: none;
 }
@@ -34,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0 0 20px;
 }
-article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, .nav, section {
 	display: block;
 }
 #maincontent {
@@ -54,22 +55,27 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-transform: uppercase;
 }
 /* ====================== Navigation ====================== */
-nav {
+.nav {
   width: 100%;
   height: 80px;
   background-color: #252831;
   text-align:center;
   display: flex;
 }
-nav h1 {
+.nav h1 {
   margin: auto;
 }
-nav h1 a {
+.nav h1 a {
   color: #fff;
   font-size: 14pt;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
+}
+.nav h1 a:hover,
+.nav h1 a:focus {
+  color: #3397db;
+	text-decoration: none;
 }
 #breadcrumb {
     padding: 10px 40px 16px;
@@ -379,7 +385,7 @@ table td, table th {
   .inside #map-container {
     height: 200px;
   }
-  nav {
+  .nav {
     height: 30px;
   }
 }
@@ -387,11 +393,11 @@ table td, table th {
   #breadcrumb li {
       font-size: 1.3em;
   }
-  nav {
+  .nav {
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  nav h1 a {
+  .nav h1 a {
     font-size: 0.7em;
   }
 }
